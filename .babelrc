@@ -1,0 +1,17 @@
+{
+	"presets": ["react"],
+	"plugins": [
+		["react-hot-loader/babel"],
+		["jsx-control-statements"],
+		["babel-plugin-styled-components", {
+			"ssr": false,
+			"displayName": true,
+			"fileName": true,
+			"minify": false,
+			"transpileTemplateLiterals": true,
+			"pure": false,
+		}],
+	],
+	"ignore": [
+	],
+}

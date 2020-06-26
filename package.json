@@ -1,5 +1,5 @@
 {
-  "name": "test_uikit",
+  "name": "ssense_demo",
   "version": "1.0.0",
   "description": "",
   "main": "src/index.html",
@@ -23,17 +23,26 @@
     "html-webpack-plugin": "^3.2.0",
     "http-proxy": "1.14.0",
     "jsx-control-statements": "^3.2.8",
-    "underscore": "^1.8.3",
+    "react-hot-loader": "^4.12.21",
+    "underscore": "^1.9.1",
     "webpack": "^4.6.0",
     "webpack-cli": "^3.1.1",
     "webpack-dev-middleware": "^2.0.6",
     "webpack-hot-middleware": "^2.21.2",
     "webpack-merge": "^4.1.2",
+    "whatwg-fetch": "^3.0.0",
     "yargs": "^11.0.0"
   },
   "dependencies": {
+    "kea": "^2.1.1",
+    "kea-loaders": "^0.3.0",
+    "kea-router": "^0.4.0",
+    "kea-waitfor": "^0.1.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-redux": "^7.1.1",
+    "redux": "^4.0.4",
+    "reselect": "^4.0.0",
     "styled-components": "^5.1.1"
   }
 }
