@@ -78,7 +78,7 @@ function routing(){
 	// 	res.redirect("/index.html");
 	// });
 }
-// function proxying(){
+function proxying(){
 // 	app.use((req, res, next) => {
 // 		var pathname = req.path;
 // 		// 限制一下，避免请求到服务器资源，误判
@@ -94,7 +94,7 @@ function routing(){
 // 			proxy.web(req, res, { target: proxyTarget }, next);
 // 		}
 // 	});
-// }
+}
 function mocking(){
 
 }
