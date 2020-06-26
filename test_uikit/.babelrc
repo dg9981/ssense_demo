@@ -1,0 +1,15 @@
+{
+	"presets": ["react"],
+	"plugins": [
+		["babel-plugin-styled-components", {
+			"ssr": false,
+			"displayName": true,
+			"fileName": true,
+			"minify": false,
+			"transpileTemplateLiterals": true,
+			"pure": false,
+		}],
+	],
+	"ignore": [
+	],
+}
