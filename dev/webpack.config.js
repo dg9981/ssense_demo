@@ -96,11 +96,11 @@ module.exports = function(envcfg){
 
 			resolve: {
 				alias: {
-                    "@": path.resolve("./src/"),	// 相对运行目录，不是本 js 目录
-                    // 防止多个运行时
-                    "styled-components": path.resolve('./node_modules/styled-components'),
-                    "react": path.resolve('./node_modules/react'),
-                    "react-dom": path.resolve('./node_modules/react-dom'),
+					"@": path.resolve("./src/"),	// 相对运行目录，不是本 js 目录
+					// 防止多个运行时
+					"styled-components": path.resolve('./node_modules/styled-components'),
+					"react": path.resolve('./node_modules/react'),
+					"react-dom": path.resolve('./node_modules/react-dom'),
 				}
 			},
 
@@ -197,10 +197,11 @@ module.exports = function(envcfg){
 		}),
 		{
 			name: "app",	// 匹配 client?name=app
-			entry: ["./src/index.js"],		// 相对执行路径
+			entry: ["react-hot-loader/patch", "./src/index.js"],	// 相对执行路径
 			output: {
-				filename: "index.js",		// 将写入 html src 的内容
-				path: path.resolve("../dist/"),			// 相对本文件路径
+				filename: "index.js",		// 将写入 html src
+				publicPath: "/",			// 将写入 html src
+				path: path.resolve("../dist/"),		// 相对本文件路径
 			}
 		}
 	]);

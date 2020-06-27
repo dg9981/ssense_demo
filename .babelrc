@@ -1,5 +1,5 @@
 {
-	"presets": ["react"],
+	"presets": ["env", "stage-2", "react"],
 	"plugins": [
 		["react-hot-loader/babel"],
 		["jsx-control-statements"],

@@ -1,10 +1,10 @@
-import { hot } from 'react-hot-loader/root';	// first load
 import "whatwg-fetch";
 import { Provider } from "react-redux";
 import ReactDOM from "react-dom";
 import React from "react";
 
 import GlobalStyle from "./common/global_style";
+import GlobalRouter from "./common/global_router";
 
 // store
 import { getContext, resetContext } from "kea";
@@ -22,22 +22,23 @@ resetContext({
 	},
 	plugins: [
 		loadersPlugin({
+			onStart({ logic, reducerKey, actionKey }){
+			},
+			onSuccess({ response, logic, reducerKey, actionKey }){
+			},
+			onFailure({ error, logic, reducerKey, actionKey }){
+			},
 		}),
-		routerPlugin({
-		}),
+		routerPlugin,
 		waitForPlugin,
 	]
 });
-
-// 测试 HMR
-var App = () => <div>都吃完</div>;
-var HotApp = hot(App);
 
 // entry
 ReactDOM.render(
 	<Provider store={ getContext().store }>
 		<GlobalStyle />
-		<HotApp />
+		<GlobalRouter />
 	</Provider>,
 	document.getElementById("root")
 );
