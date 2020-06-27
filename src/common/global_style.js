@@ -45,20 +45,6 @@ const GlobalStyle = createGlobalStyle`
 		border-collapse: collapse;
 		border-spacing: 0;
 	}
-	#root{
-		padding: 20px;
-		box-sizing: border-box;
-		>div{
-			margin: 0;
-		}
-		h1{
-			color: #06a9ed;
-			font-size: 20px;
-		}
-		h3{
-			color: #1e232d;
-		}
-	}
 `;
 class Global extends PureComponent {
 	render(){

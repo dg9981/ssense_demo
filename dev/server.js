@@ -56,7 +56,7 @@ hmr(webpackDef);
 routing();
 mocking();
 proxying();
-
+err();
 
 
 
@@ -97,29 +97,89 @@ function routing(){
 			res.end(content);
 		});
 	});
-	// 非法路径
-	app.get(["*"], (req, res, next) => {
-		res.redirect("/zh/welcome");
-	});
 }
 function proxying(){
 }
 function mocking(){
 	app.get("/v1/welcome-list", function(req, res, next){
 		var data = [{
-			pic: "",
+			figure: "https://res.cloudinary.com/ssenseweb/image/upload/w_0.1,q_40,f_auto,dpr_auto/v1591098041/sogynpn3zq60sgs4vykw.jpg",
 			title: {
-				zh:"",
-				en:"",
+				zh: "Black Lives Matter: 动员行动指南",
+				en: "",
+			},
+			label: {
+				zh: "文化",
+				en: "",
+			},
+			desc: {
+				zh: "",
+				en: "",
 			},
 		}, {
-			pic: "",
+			figure: "https://res.cloudinary.com/ssenseweb/image/upload/w_0.1,q_40,f_auto,dpr_auto/v1592940216/quuvolwx04bwnykxsgsi.jpg",
 			title: {
-				zh:"",
-				en:"",
+				zh: "双场电影 · 双重美梦",
+				en: "",
+			},
+			label: {
+				zh: "文化",
+				en: "",
+			},
+			desc: {
+				zh: "从《布偶迷踪》到《星河战队》，五位作者分享他们的理想电影搭配",
+				en: "",
+			},
+		}, {
+			figure: "https://res.cloudinary.com/ssenseweb/image/upload/w_0.1,q_40,f_auto,dpr_auto/v1592411059/fcsgzzjs9c8ivfjo4bro.jpg",
+			title: {
+				zh: "上一次欢笑",
+				en: "",
+			},
+			label: {
+				zh: "文化",
+				en: "",
+			},
+			desc: {
+				zh: "",
+				en: "",
+			},
+		}, {
+			figure: "https://res.cloudinary.com/ssenseweb/image/upload/w_0.1,q_40,f_auto,dpr_auto/v1591902155/tzaicv3quadrnfpnmxis.jpg",
+			title: {
+				zh: "市场调查：Wales Bonner「Havana 短袖衬衫」与「Oraa 开衫」",
+				en: "",
+			},
+			label: {
+				zh: "时尚",
+				en: "",
+			},
+			desc: {
+				zh: "",
+				en: "",
+			},
+		}, {
+			figure: "https://res.cloudinary.com/ssenseweb/image/upload/w_0.1,q_40,f_auto,dpr_auto/v1591812552/w0xe5sgtgvl3mzwm5rdh.jpg",
+			title: {
+				zh: "往昔为证",
+				en: "",
+			},
+			label: {
+				zh: "文化",
+				en: "",
+			},
+			desc: {
+				zh: "",
+				en: "",
 			},
 		}];
 		res.setHeader("Content-Type", "application/json;charset=utf-8");
 		res.end(JSON.stringify(data));
+	});
+}
+function err(){
+	// 非法路径
+	app.get(["*"], (req, res, next) => {
+		res.redirect("/zh/welcome");
 	});
 }
