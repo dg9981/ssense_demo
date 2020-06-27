@@ -5,6 +5,7 @@ import Category from "../pages/category";
 import GlobalRouter from "./global_router";
 import { useActions, useValues } from "kea";
 import styled from 'styled-components';
+import Nav from "../pages/nav";
 
 
 // 后续可以做供 lazy 调用的拆分模块函数
@@ -22,7 +23,7 @@ const LayoutDiv = styled.div`
 function Layout({ children }){
 	return (
 		<LayoutDiv>
-			<div className="nav">...</div>
+			<Nav></Nav>
 			<div className="body">{ children }</div>
 			<div className="foot"></div>
 		</LayoutDiv>

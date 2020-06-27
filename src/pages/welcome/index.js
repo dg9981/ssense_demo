@@ -5,6 +5,13 @@ import styled from "styled-components";
 import { TextBtn } from "uikit-demo";
 import store from "./store";
 
+import enLang from "./lang/en.json";
+import zhLang from "./lang/zh.json";
+const langPack = {
+	en: enLang,
+	zh: zhLang,
+};
+
 const BigNav = styled.div`
 	width: 100%;
 	height: 212px;
@@ -92,6 +99,7 @@ const Block = function(props){
 export default function(){
 	let { switchLang, openCategory } = useActions(GlobalRouter);
 	let { curUrlParams } = useValues(GlobalRouter);
+	let lang = langPack[curUrlParams.lang];
 	// 使用 hooks 会促使 logic build & mount
 	let { test_data, welcomeList } = useValues(store);	// 数据可能还没回来
 	console.log("test_data", test_data, welcomeList, curUrlParams.lang);
@@ -106,9 +114,9 @@ export default function(){
 	return (
 		<Fragment>
 			<BigNav>
-				<img src="https://res.cloudinary.com/ssenseweb/image/upload/w_0.1,q_40,f_auto,dpr_auto/v1592920277/tyulxscypakosufbaiou.gif"/>
-				<TextBtn onClick={ ()=>openCategory("man") }>选购男士产品</TextBtn>
-				<TextBtn onClick={ ()=>openCategory("woman") }>选购女士产品</TextBtn>
+				<img src={ lang.top_ad }/>
+				<TextBtn onClick={ ()=>openCategory("man") }>{ lang.choose_man }</TextBtn>
+				<TextBtn onClick={ ()=>openCategory("woman") }>{ lang.choose_woman }</TextBtn>
 			</BigNav>
 			<If condition={ welcomeList }>
 				<Blocks>

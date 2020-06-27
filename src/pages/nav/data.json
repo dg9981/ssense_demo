@@ -1,0 +1,58 @@
+{
+	"MEN":{
+		"DESIGNERS": [
+			"Carhartt Work In Progress",
+			"Stella McCartney",
+			"Carne Bollente",
+			"Casablanca"
+		],
+		"SUGGESTED": [
+			"Carhartt Work In Progress JACKETS & COATS",
+			"Carhartt Work In Progress SHIRTS",
+			"Carhartt Work In Progress SWEATERS",
+			"Carhartt Work In Progress TOPS"
+		]
+	},
+	"WOMEN":{
+		"DESIGNERS": [
+			"Stella McCartney",
+			"Carhartt Work In Progress",
+			"adidas by Stella McCartney",
+			"Daniëlle Cathari"
+		],
+		"SUGGESTED": [
+			"Stella McCartney BAGS",
+			"Stella McCartney PANTS",
+			"Stella McCartney TOPS",
+			"Stella McCartney SHOES"
+		]	
+	},
+	"MENSALE":{
+		"DESIGNERS": [
+			"Casablanca",
+			"Carhartt Work In Progress",
+			"Carne Bollente",
+			"Stella McCartney"
+		],
+		"SUGGESTED": [
+			"Carhartt Work In Progress JACKETS & COATS",
+			"Progress SHIRTS",
+			"Carhartt Work In Progress TOPS",
+			"Carhartt Work In Progress SWEATERS"
+		]
+	},
+	"WOMENSALE":{
+		"DESIGNERS": [
+			"McCartney",
+			"adidas by Stella McCartney",
+			"Daniëlle Cathari",
+			"Carhartt Work In Progress"
+		],
+		"SUGGESTED": [
+			"Stella BAGS",
+			"Stella McCartney PANTS",
+			"Stella McCartney TOPS",
+			"Stella McCartney SHOES"
+		]	
+	}
+}
