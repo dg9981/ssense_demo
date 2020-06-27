@@ -1,19 +1,6 @@
-import { hot } from 'react-hot-loader/root';	// first load
 import { kea, useActions, useValues, encodeParams, decodeParams, combineUrl } from "kea";
 import { router } from "kea-router";
-import Welcome from "../pages/welcome";
-import Category from "../pages/category";
-import React, { Suspense } from "react";
 
-// 1. 测试 kea 路由
-// 2. 强转 / 和 /index.html
-
-
-// 后续可以做供 lazy 调用的拆分模块函数
-const scenes = {
-	welcome: () => Welcome,
-	category: () => Category,
-};
 // 路由映射模块
 // 静态服务强制转换非法路由到 welcome
 // 404 仅限于需要查询的 URL
@@ -21,8 +8,11 @@ const routes = {
 	"/:lang/welcome": "welcome",
 	"/:lang/category/:sex": "category",
 };
+
 // 路由逻辑
-const sceneLogic = kea({
+// 导出，供外部使用 useValue(sceneLogic); 判断当前位置
+// 供外部使用便捷的 URL 切换 useActions(sceneLogic);
+export default kea({
 	// 为每个 routes 设定一个 action
 	// 自动调用
 	urlToAction: ({ actions }) => {
@@ -38,10 +28,14 @@ const sceneLogic = kea({
 	// 定义可跳转路由的操作
 	// 自动监听对应的 actions
 	actionToUrl: ({ values }) => ({
-		openCategory: ({sex}) => "/" + values.curUrlParams.lang + "/category/" + sex,
+		switchLang: ({lang}) => location.pathname.replace(/zh|en/, lang),
+		openCategory: ({sex}) => {
+			return "/" + values.curUrlParams.lang + "/category/" + sex;
+		},
 		openWelcome: () => "/" + values.curUrlParams.lang + "/welcome",
 	}),
 	actions: {
+		switchLang: (lang) => ({lang}),
 		openWelcome: () => true,
 		openCategory: (sex) => ({sex}),
 		setScene: (scene, params) => ({ scene, params }),
@@ -67,29 +61,4 @@ const sceneLogic = kea({
 		},
 	}),
 });
-
-function Layout({ children }){
-	return (
-		<div className="layout">
-			<div className="nav">...</div>
-			<div className="body">{ children }</div>
-		</div>
-	);
-}
-
-function Scenes({ actions, ...values }){
-	// 直接使用 kea logic 不安全
-	// const { curScene, curUrlParams } = useValues(sceneLogic);
-	const { curScene, curUrlParams } = values;
-	const Scene = scenes[curScene]();
-	return (
-		<Layout>
-			<Scene {...curUrlParams} />
-			<a onClick={ ()=>actions.openCategory("man") }>走走走</a>
-		</Layout>
-	);
-};
-
-// wrap 才能安全使用 kea
-export default sceneLogic( hot(Scenes) );
 

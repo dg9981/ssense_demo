@@ -4,7 +4,7 @@ import ReactDOM from "react-dom";
 import React from "react";
 
 import GlobalStyle from "./common/global_style";
-import GlobalRouter from "./common/global_router";
+import Layout from "./common/layout";
 
 // store
 import { getContext, resetContext } from "kea";
@@ -38,7 +38,7 @@ resetContext({
 ReactDOM.render(
 	<Provider store={ getContext().store }>
 		<GlobalStyle />
-		<GlobalRouter />
+		<Layout />
 	</Provider>,
 	document.getElementById("root")
 );
