@@ -24,7 +24,7 @@
     "file-loader": "^0.11.2",
     "html-loader": "^0.4.5",
     "html-webpack-plugin": "^3.2.0",
-    "http-proxy": "1.14.0",
+    "http-proxy": "1.18.1",
     "jsx-control-statements": "^3.2.8",
     "memory-fs": "^0.5.0",
     "node-fetch": "^2.6.0",
